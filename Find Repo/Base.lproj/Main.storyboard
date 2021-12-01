@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Repo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchRepoViewController" customModule="Find_Repo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Type to search repositories..." translatesAutoresizingMaskIntoConstraints="NO" id="DXv-lb-u0E">
+                                <rect key="frame" x="0.0" y="54" width="414" height="51"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cFZ-f0-Ky9"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xnn-Ci-bHc">
+                                <rect key="frame" x="10" y="95" width="394" height="767"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryRecordCell" id="hcU-qG-Vkw" customClass="RepositoryRecordCell" customModule="Find_Repo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="394" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcU-qG-Vkw" id="g1G-km-WIe">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gitignore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-o5-LcA">
+                                                    <rect key="frame" x="15" y="10" width="364" height="23"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efh-5a-NMS">
+                                                    <rect key="frame" x="15" y="37" width="364" height="29"/>
+                                                    <string key="text">Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b0j-o5-LcA" firstAttribute="leading" secondItem="g1G-km-WIe" secondAttribute="leading" constant="15" id="34M-JU-UQU"/>
+                                                <constraint firstItem="efh-5a-NMS" firstAttribute="leading" secondItem="g1G-km-WIe" secondAttribute="leading" constant="15" id="685-vm-xC5"/>
+                                                <constraint firstItem="b0j-o5-LcA" firstAttribute="top" secondItem="g1G-km-WIe" secondAttribute="top" constant="10" id="8ot-Ks-2ZX"/>
+                                                <constraint firstAttribute="trailing" secondItem="b0j-o5-LcA" secondAttribute="trailing" constant="15" id="J93-fA-prq"/>
+                                                <constraint firstAttribute="bottom" secondItem="efh-5a-NMS" secondAttribute="bottom" constant="5" id="Lgm-MR-C5M"/>
+                                                <constraint firstItem="efh-5a-NMS" firstAttribute="top" secondItem="b0j-o5-LcA" secondAttribute="bottom" constant="4" id="SSU-pP-9OA"/>
+                                                <constraint firstAttribute="trailing" secondItem="efh-5a-NMS" secondAttribute="trailing" constant="15" id="gWT-up-sOx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="repoDescriptionLabel" destination="efh-5a-NMS" id="hg9-FD-LhN"/>
+                                            <outlet property="repoNameLabel" destination="b0j-o5-LcA" id="wYc-wf-xVm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="UMW-ko-1kE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="G3i-RX-Jfm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DXv-lb-u0E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6GU-qs-uHf"/>
+                            <constraint firstItem="DXv-lb-u0E" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OD2-iM-tz8"/>
+                            <constraint firstItem="DXv-lb-u0E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="OH1-hc-E9h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xnn-Ci-bHc" secondAttribute="bottom" id="UHh-nL-vEA"/>
+                            <constraint firstItem="xnn-Ci-bHc" firstAttribute="top" secondItem="DXv-lb-u0E" secondAttribute="bottom" constant="-10" id="bxb-gc-AKz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xnn-Ci-bHc" secondAttribute="trailing" constant="10" id="oTR-e8-gO7"/>
+                            <constraint firstItem="xnn-Ci-bHc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tHI-hK-IFZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="DXv-lb-u0E" id="hUd-dF-F6f"/>
+                        <outlet property="suggestionsTableView" destination="xnn-Ci-bHc" id="QhK-nK-g8m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152" y="-187"/>
+        </scene>
+        <!--Repository Detail Controller-->
+        <scene sceneID="KSb-7v-Ta4">
+            <objects>
+                <viewController storyboardIdentifier="RepositoryDetailController" id="y6K-4O-ozE" customClass="RepositoryDetailController" customModule="Find_Repo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lmn-Hc-tvU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="git" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWx-2b-8of">
+                                <rect key="frame" x="20" y="74" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language: Shell" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tt2-aS-U2K">
+                                <rect key="frame" x="20" y="106" width="115.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Public)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF5-0u-jXg">
+                                <rect key="frame" x="347.5" y="106" width="61.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner: Shell" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKe-Kw-svj">
+                                <rect key="frame" x="20" y="130.5" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P76-4Z-dIL">
+                                <rect key="frame" x="20" y="160" width="47.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="GIT utilities -- repo summary, repl, changelog population, author commit percentages and more" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15s-ru-K74">
+                                <rect key="frame" x="20" y="179.5" width="374" height="666.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X34-M9-ka3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WF5-0u-jXg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tt2-aS-U2K" secondAttribute="trailing" constant="8" symbolic="YES" id="3SH-P6-ed2"/>
+                            <constraint firstAttribute="bottom" secondItem="15s-ru-K74" secondAttribute="bottom" constant="50" id="50j-2V-avf"/>
+                            <constraint firstItem="KKe-Kw-svj" firstAttribute="top" secondItem="WF5-0u-jXg" secondAttribute="bottom" constant="5" id="5mA-fi-cl2"/>
+                            <constraint firstItem="P76-4Z-dIL" firstAttribute="leading" secondItem="vWx-2b-8of" secondAttribute="leading" id="BHo-kI-uNP"/>
+                            <constraint firstItem="vWx-2b-8of" firstAttribute="top" secondItem="X34-M9-ka3" secondAttribute="top" constant="30" id="DNr-mf-57z"/>
+                            <constraint firstItem="Tt2-aS-U2K" firstAttribute="top" secondItem="vWx-2b-8of" secondAttribute="bottom" constant="8" symbolic="YES" id="GoZ-aO-o0d"/>
+                            <constraint firstItem="KKe-Kw-svj" firstAttribute="leading" secondItem="X34-M9-ka3" secondAttribute="leading" constant="20" id="HDZ-zK-5S5"/>
+                            <constraint firstItem="X34-M9-ka3" firstAttribute="trailing" secondItem="15s-ru-K74" secondAttribute="trailing" constant="20" id="OJA-bR-oeV"/>
+                            <constraint firstItem="WF5-0u-jXg" firstAttribute="top" secondItem="vWx-2b-8of" secondAttribute="bottom" constant="8" id="UOX-o9-Wyd"/>
+                            <constraint firstItem="KKe-Kw-svj" firstAttribute="top" secondItem="WF5-0u-jXg" secondAttribute="bottom" constant="5" id="UbL-a0-RzV"/>
+                            <constraint firstItem="vWx-2b-8of" firstAttribute="leading" secondItem="X34-M9-ka3" secondAttribute="leading" constant="20" id="X7F-tn-Tnb"/>
+                            <constraint firstItem="15s-ru-K74" firstAttribute="leading" secondItem="X34-M9-ka3" secondAttribute="leading" constant="20" id="Zsq-B4-STj"/>
+                            <constraint firstItem="X34-M9-ka3" firstAttribute="trailing" secondItem="vWx-2b-8of" secondAttribute="trailing" constant="20" id="dFP-1e-mCd"/>
+                            <constraint firstItem="X34-M9-ka3" firstAttribute="trailing" secondItem="KKe-Kw-svj" secondAttribute="trailing" constant="20" id="hNL-hm-gcu"/>
+                            <constraint firstItem="X34-M9-ka3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P76-4Z-dIL" secondAttribute="trailing" symbolic="YES" id="mwh-Hr-K0E"/>
+                            <constraint firstItem="15s-ru-K74" firstAttribute="top" secondItem="P76-4Z-dIL" secondAttribute="bottom" id="pn5-bK-oDf"/>
+                            <constraint firstItem="Tt2-aS-U2K" firstAttribute="leading" secondItem="X34-M9-ka3" secondAttribute="leading" constant="20" id="ulD-ht-2Ei"/>
+                            <constraint firstItem="X34-M9-ka3" firstAttribute="trailing" secondItem="WF5-0u-jXg" secondAttribute="trailing" constant="5" id="xKq-xh-YjI"/>
+                            <constraint firstItem="P76-4Z-dIL" firstAttribute="top" secondItem="KKe-Kw-svj" secondAttribute="bottom" constant="10" id="zJH-Qw-fcc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="15s-ru-K74" id="8mb-cO-rJI"/>
+                        <outlet property="languageLabel" destination="Tt2-aS-U2K" id="b7s-5T-upV"/>
+                        <outlet property="ownerNameLabel" destination="KKe-Kw-svj" id="ZBZ-xX-bBx"/>
+                        <outlet property="repoNameLabel" destination="vWx-2b-8of" id="QI2-6p-LX7"/>
+                        <outlet property="visibilityStatusLabel" destination="WF5-0u-jXg" id="BJA-Je-cYH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXN-7P-6DW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407.24637681159425" y="66.294642857142861"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
